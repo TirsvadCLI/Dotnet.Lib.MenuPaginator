@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <VersionPrefix>0.1.0-alpha.1</VersionPrefix>
+        <PackageId>TirsvadCLI.$(AssemblyName)</PackageId>
+        <Title>Paginate menu handler</Title>
+        <Authors>Jens Tirsvad Nielsen</Authors>
+        <Company>TirsvadCLI</Company>
+        <PackageIcon>logo.png</PackageIcon>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <RepositoryUrl>https://github.com/TirsvadCLI/CSharp.Tool.Frame</RepositoryUrl>
+        <PackageTags>Menu;Pagiante;Console</PackageTags>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <Description>Paginate menu handler tool for console</Description>
+    </PropertyGroup>
+    <ItemGroup>
+        <None Include="..\..\..\logo\logo.png">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+        <None Include="..\..\..\README.md">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+        <None Include="..\..\..\LICENSE">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+    </ItemGroup>
+</Project>
