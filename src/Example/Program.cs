@@ -72,7 +72,7 @@ internal class Program
             new MenuItem("Some action to do", (Action)SomeAction),
             new MenuItem("Some action action to do", new Action(() => { SomeActionWithParameter("Hello"); })),
         };
-        MenuPaginator menu = new(menuItems, 10, true);
+        MenuPaginator menu = new(menuItems, 10);
         if (menu.menuItem != null && menu.menuItem.Action is Action action)
         {
             action();

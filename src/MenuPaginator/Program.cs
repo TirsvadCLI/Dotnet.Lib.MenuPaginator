@@ -109,6 +109,11 @@ public class MenuPaginator
             {
                 if (main)
                     Environment.Exit(0);
+                else
+                {
+                    menuItem = null;
+                    break;
+                }
             }
             else if (key.Key == ConsoleKey.F12 && pageIndex < totalPages - 1)
             {
@@ -139,9 +144,6 @@ public class MenuPaginator
             }
         } while (true);
     }
-
-
-
 
     /// <summary>
     /// Clears the console from a specific position and down.
