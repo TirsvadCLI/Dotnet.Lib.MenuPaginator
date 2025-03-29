@@ -40,8 +40,8 @@ internal class Program
         {
             new MenuItem("Some action to do", (Action)SomeAction)
         };
-        MenuItem? menuItem = MenuPaginator.Paginator(menuItems, 10, true);
-        if (menuItem != null && menuItem.Action is Action action)
+        MenuPaginator menu = new(menuItems, 10, true);
+        if (menu.menuItem != null && menu.menuItem.Action is Action action)
         {
             action();
         }
@@ -64,7 +64,7 @@ internal class Program
             new MenuItem("Some action to do", (Action)SomeAction),
             new MenuItem("Some action action to do", (Action)SomeOtherAction),
             new MenuItem("Some action to do", (Action)SomeAction),
-            new MenuItem("Some category", null),
+            new MenuItem("A category", null),
             new MenuItem("Some action to do", (Action)SomeAction),
             new MenuItem("Some action action to do", (Action)SomeOtherAction),
             new MenuItem("Some action to do", (Action)SomeAction),
@@ -72,8 +72,8 @@ internal class Program
             new MenuItem("Some action to do", (Action)SomeAction),
             new MenuItem("Some action action to do", new Action(() => { SomeActionWithParameter("Hello"); })),
         };
-        MenuItem? menuItem = MenuPaginator.Paginator(menuItems, 10, true);
-        if (menuItem != null && menuItem.Action is Action action)
+        MenuPaginator menu = new(menuItems, 10);
+        if (menu.menuItem != null && menu.menuItem.Action is Action action)
         {
             action();
         }

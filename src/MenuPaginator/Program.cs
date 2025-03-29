@@ -23,21 +23,7 @@ public class MenuItem
 
 public class MenuPaginator
 {
-    /// <summary>
-    /// Clears the console from a specific position and down.
-    /// </summary>
-    /// <param name="left">The left position to start clearing from.</param>
-    /// <param name="top">The top position to start clearing from.</param>
-    static void ClearConsoleFromPosition(int left, int top)
-    {
-        int currentLineCursor = top;
-        while (currentLineCursor < Console.WindowHeight)
-        {
-            Console.SetCursorPosition(left, currentLineCursor);
-            Console.Write(new string(' ', Console.WindowWidth - left));
-            currentLineCursor++;
-        }
-    }
+    public MenuItem? menuItem = null;
 
     /// <summary>
     /// Paginates a list of menu items.
@@ -46,7 +32,8 @@ public class MenuPaginator
     /// <param name="pageSize"></param>
     /// <param name="main">Is this a main menu then esc is qual to exit</param>
     /// <returns></returns>
-    public static MenuItem? Paginator(List<MenuItem> menuItems, int pageSize, bool main = false)
+
+    public MenuPaginator(List<MenuItem> menuItems, int pageSize, bool main = false)
     {
         string errorMessage = ""; ///> Error message to be display
         int pageIndex = 0; ///> Index of current page
@@ -122,7 +109,11 @@ public class MenuPaginator
             {
                 if (main)
                     Environment.Exit(0);
-                return null;
+                else
+                {
+                    menuItem = null;
+                    break;
+                }
             }
             else if (key.Key == ConsoleKey.F12 && pageIndex < totalPages - 1)
             {
@@ -138,14 +129,36 @@ public class MenuPaginator
                 if (selectedIndex <= indexValidChoice - 1)
                 {
                     if (validIndex[selectedIndex] != -1)
-                        return newMenuItems[validIndex[selectedIndex]];
+                        menuItem = newMenuItems[validIndex[selectedIndex]];
                 }
-                errorMessage = "Fejl: Valget er ugyldig.";
+                break;
             }
             else
             {
-                errorMessage = $"Fejl: Gyldige taster er F1-F{pagedMenuItems.Count}.";
+                errorMessage = $"Fejl: Gyldige taster er F1-F{pagedMenuItems.Count} og ";
+                if (pageIndex < totalPages - 1)
+                    errorMessage += "F12 og ";
+                if (pageIndex > 0)
+                    errorMessage += "F11 og ";
+                errorMessage += "ESC";
             }
         } while (true);
     }
+
+    /// <summary>
+    /// Clears the console from a specific position and down.
+    /// </summary>
+    /// <param name="left">The left position to start clearing from.</param>
+    /// <param name="top">The top position to start clearing from.</param>
+    void ClearConsoleFromPosition(int left, int top)
+    {
+        int currentLineCursor = top;
+        while (currentLineCursor < Console.WindowHeight)
+        {
+            Console.SetCursorPosition(left, currentLineCursor);
+            Console.Write(new string(' ', Console.WindowWidth - left));
+            currentLineCursor++;
+        }
+    }
+
 }
