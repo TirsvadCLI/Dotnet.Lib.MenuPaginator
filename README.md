@@ -1,4 +1,4 @@
-[![Contributors][contributors-shield]][contributors-url]
+﻿[![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
@@ -17,7 +17,7 @@
     <br />
     <!-- PROJECT SCREENSHOTS -->
     <br />
-    <a href="https://github.com/TirsvadCLI/CSharp.Tool.MenuPaginator"><strong>Explore the docs �</strong></a>
+    <a href="https://github.com/TirsvadCLI/CSharp.Tool.MenuPaginator"><strong>Explore the docs</strong></a>
     <br />
     <br />
     <a href="https://github.com/TirsvadCLI/CSharp.Tool.MenuPaginator/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
@@ -26,7 +26,24 @@
 </div>
 
 # Menu paginator
- Create a menu that can handle multipages of choice.
+Pagination tool for menu selection in C# console applications.
+
+## About The Project
+This tool is designed to help with creating a menu selection in a console application. The tool will take a list of items and display them in a paginated format. The user can then navigate through the pages and select an item.
+
+## Folder structure
+```
+CSharp.Tool.MenuPaginator
+│   README.md                           // This file
+|   MenuPaginator.sln                   // Solution file
+|   src
+│   └───MenuPaginator
+│       │   MenuPaginator.cs            // The MenuPaginator class
+│       │   MenuPaginator.csproj        // Project file
+|       Example                         // Show how to use the MenuPaginator
+|       └───Program.cs
+
+```
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [contributors-shield]: https://img.shields.io/github/contributors/TirsvadCLI/CSharp.Tool.MenuPaginator?style=for-the-badge
@@ -41,4 +58,3 @@
 [license-url]: https://github.com/TirsvadCLI/CSharp.Tool.MenuPaginator/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/jens-tirsvad-nielsen-13b795b9/
-
