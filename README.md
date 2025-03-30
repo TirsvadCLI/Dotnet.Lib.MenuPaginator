@@ -13,6 +13,15 @@
     <h3 align="center">Menu paginator</h3>
     <p>Menu paginator tool for C# console applications.</p>
     <!-- PROJECT SCREENSHOTS -->
+        <a href="https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator/blob/master/images/Screenshot1.png">
+            <img src="images/Screenshot1.png" alt="The game" height="120">
+        </a>
+        <a href="https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator/blob/master/images/Screenshot2.png">
+            <img src="images/Screenshot2.png" alt="The game" height="120">
+        </a>
+        <a href="https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator/blob/master/images/Screenshot3.png">
+            <img src="images/Screenshot3.png" alt="The game" height="120">
+        </a>    
     <br />
     <p><a href="https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator"><strong>Explore the docs</strong></a></p>
     <a href="https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
