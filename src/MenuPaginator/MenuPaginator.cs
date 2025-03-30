@@ -8,13 +8,12 @@
 /// <param name="Name">The name of the menu item.</param>
 /// <param name="Action">The action that will be execute if choose</param>
 /// <param name="Role">If user should be able to choose this</param>
-/// </param>
 public class MenuItem
 {
     public string Name { get; private set; }
-    public object? Action { get; private set; } = null;
+    public Action? Action { get; private set; } = null;
 
-    public MenuItem(string menuTitle, object? action)
+    public MenuItem(string menuTitle, Action? action)
     {
         Name = menuTitle;
         Action = action;
@@ -25,84 +24,90 @@ public class MenuPaginator
 {
     public MenuItem? menuItem = null;
 
+    public void ColorizeString(string text, ConsoleColor fg_color, ConsoleColor? bg_color = null)
+    {
+        Console.ForegroundColor = fg_color;
+        Console.BackgroundColor = bg_color ?? ConsoleColor.Black;
+        Console.Write(text);
+        Console.ResetColor();
+    }
+
+
     /// <summary>
     /// Paginates a list of menu items.
     /// </summary>
     /// <param name="menuItems"></param>
     /// <param name="pageSize"></param>
-    /// <param name="main">Is this a main menu then esc is qual to exit</param>
-    /// <returns></returns>
-
+    /// <param name="main">Is this a main menu then esc is equal to exit</param>
     public MenuPaginator(List<MenuItem> menuItems, int pageSize, bool main = false)
     {
-        string errorMessage = ""; ///> Error message to be display
-        int pageIndex = 0; ///> Index of current page
+
+        string errorMessage = ""; // Error message to be displayed
+        int pageIndex = 0; // Index of current page
         int x;
-        List<int> validIndex; ///> Index of Valid choice this user can make.
-        List<int> validChoice; ///> Index of Valid choice this user can make.
-        List<MenuItem> newMenuItems; ///> New menu items
-        (int Left, int Top) Position; ///> For cursor position
+        List<int> validIndex; // Index of valid choices this user can make.
+        List<MenuItem> newMenuItems; // New menu items
+        (int Left, int Top) Position; // For cursor position
         Console.CursorVisible = false;
-        int totalPages = (int)Math.Ceiling(menuItems.Count / (double)pageSize); ///> Total pages
-        Position = Console.GetCursorPosition(); ///> Get the current cursor position
+        int totalPages = (int)Math.Ceiling(menuItems.Count / (double)pageSize); // Total pages
+        Position = Console.GetCursorPosition(); // Get the current cursor position
         do
         {
             x = 0;
-            validIndex = [];
-            validChoice = [];
-            newMenuItems = [];
-            int indexValidChoice = 0; ///> Index used for valid choice. Used for display only.
+            validIndex = new List<int>();
+            newMenuItems = new List<MenuItem>();
+            int indexValidChoice = 0; // Index used for valid choice. Used for display only.
             ClearConsoleFromPosition(Position.Left, Position.Top);
             Console.SetCursorPosition(Position.Left, Position.Top);
-            if (errorMessage != "")
+            if (!string.IsNullOrEmpty(errorMessage))
             {
-                Console.WriteLine(AnsiCode.Colorize(errorMessage, AnsiCode.RED));
+                ColorizeString(errorMessage, ConsoleColor.Red);
                 errorMessage = "";
             }
 
             var pagedMenuItems = menuItems
-            .Skip(pageIndex * pageSize)
-            .Take(pageSize)
-            .Select((item, index) =>
-            {
-                if (item.Action == null)
+                .Skip(pageIndex * pageSize)
+                .Take(pageSize)
+                .Select((MenuItem item, int index) =>
                 {
-                    return $"{AnsiCode.Colorize(item.Name, AnsiCode.GREEN)}";
-                }
-                else
-                {
-                    newMenuItems.Add(item);
-                    validIndex.Add(x++);
-                    return AnsiCode.Colorize($"F{1 + indexValidChoice++} ", AnsiCode.BRIGHT_YELLOW) + item.Name;
-                }
-            })
-            .Where(item => item != null)
-            .ToList();
-
-            for (int i = 0; i < pagedMenuItems.Count; i++)
-            {
-                Console.WriteLine(pagedMenuItems[i]);
-            }
+                    if (item.Action == null)
+                    {
+                        ColorizeString(item.Name, ConsoleColor.Green);
+                        Console.WriteLine();
+                        return item;
+                    }
+                    else
+                    {
+                        newMenuItems.Add(item);
+                        validIndex.Add(x++);
+                        ColorizeString($"F{1 + indexValidChoice++} ", ConsoleColor.Blue);
+                        ColorizeString(item.Name, ConsoleColor.Yellow);
+                        Console.WriteLine();
+                        return item;
+                    }
+                })
+                .ToList();
 
             Console.WriteLine();
 
             if (pageIndex > 0)
             {
-                Console.Write(AnsiCode.Colorize("F11 ", AnsiCode.BLUE));
+                ColorizeString("F11 ", ConsoleColor.Blue);
                 Console.Write("previous page, ");
             }
 
             if (totalPages > pageIndex + 1)
             {
-                Console.Write(AnsiCode.Colorize("F12 ", AnsiCode.BLUE));
+                ColorizeString("F12 ", ConsoleColor.Blue);
                 Console.WriteLine("next page, ");
             }
-            Console.Write(AnsiCode.Colorize("ESC ", AnsiCode.BLUE));
+            ColorizeString("ESC ", ConsoleColor.Blue);
             if (main)
-                Console.WriteLine("Afslut");
+                Console.WriteLine("Exit");
             else
-                Console.WriteLine("Tilbage");
-            Console.WriteLine($"\nSide {pageIndex + 1} af {totalPages}");
+                Console.WriteLine("Back");
+            if (totalPages > 1)
+                Console.WriteLine($"\nPage {pageIndex + 1} of {totalPages}");
 
             var key = Console.ReadKey(true);
             if (key.Key == ConsoleKey.Escape)
@@ -126,21 +131,20 @@ public class MenuPaginator
             else if (key.Key >= ConsoleKey.F1 && key.Key <= ConsoleKey.F10)
             {
                 int selectedIndex = key.Key - ConsoleKey.F1;
-                if (selectedIndex <= indexValidChoice - 1)
+                if (selectedIndex < validIndex.Count)
                 {
-                    if (validIndex[selectedIndex] != -1)
-                        menuItem = newMenuItems[validIndex[selectedIndex]];
+                    menuItem = newMenuItems[validIndex[selectedIndex]];
+                    break;
                 }
-                break;
             }
             else
             {
-                errorMessage = $"Fejl: Gyldige taster er F1-F{pagedMenuItems.Count} og ";
+                errorMessage = $"Error: Valid keys are F1-F{pagedMenuItems.Count}, ";
                 if (pageIndex < totalPages - 1)
-                    errorMessage += "F12 og ";
+                    errorMessage += "F12, ";
                 if (pageIndex > 0)
-                    errorMessage += "F11 og ";
-                errorMessage += "ESC";
+                    errorMessage += "F11, ";
+                errorMessage += "and ESC";
             }
         } while (true);
     }
@@ -160,5 +164,4 @@ public class MenuPaginator
             currentLineCursor++;
         }
     }
-
 }
