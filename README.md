@@ -27,7 +27,6 @@ Pagination tool for menu selection in C# console applications.
 
 - [About The Project](#about-the-project)
 - [Getting Started](#getting-started)
-  - [Installation](#installation)]
   - [Installation](#installation)
 - [Example](#example)
 - [Contributing](#contributing)

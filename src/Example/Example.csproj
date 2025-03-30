@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="TirsvadCLI.AnsiCode" Version="0.1.0-alpha.4" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MenuPaginator\TirsvadCLI.MenuPaginator.csproj" />
   </ItemGroup>
 
