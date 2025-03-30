@@ -2,7 +2,7 @@
 
 namespace Example;
 
-internal class Program
+internal class Example
 {
 
     static void SomeAction()
