@@ -1,4 +1,7 @@
-﻿namespace TirsvadCLI.MenuPaginator;
+﻿using System.Globalization;
+using TirsvadCLI.MenuPaginator.Handler;
+
+namespace TirsvadCLI.MenuPaginator;
 
 /// <summary>
 /// Menu item record struct.
@@ -23,6 +26,8 @@ public class MenuItem
 public class MenuPaginator
 {
     public MenuItem? menuItem = null;
+    public CultureInfo? Culture { get; private set; } = null;
+    public Translator _messageTranslate { get; private set; } = new Translator();
 
     public void ColorizeString(string text, ConsoleColor fg_color, ConsoleColor? bg_color = null)
     {
@@ -41,7 +46,6 @@ public class MenuPaginator
     /// <param name="main">Is this a main menu then esc is equal to exit</param>
     public MenuPaginator(List<MenuItem> menuItems, int pageSize, bool main = false)
     {
-
         string errorMessage = ""; // Error message to be displayed
         int pageIndex = 0; // Index of current page
         int x;
@@ -93,27 +97,27 @@ public class MenuPaginator
             if (pageIndex > 0)
             {
                 ColorizeString("F11 ", ConsoleColor.Blue);
-                Console.Write("previous page, ");
+                Console.Write(GetMsg("Previous page") + ", ");
             }
 
             if (totalPages > pageIndex + 1)
             {
                 ColorizeString("F12 ", ConsoleColor.Blue);
-                Console.WriteLine("next page, ");
+                Console.WriteLine(GetMsg("Next page") + ", ");
             }
             ColorizeString("ESC ", ConsoleColor.Blue);
             if (main)
-                Console.WriteLine("Exit");
+                Console.WriteLine(GetMsg("Exit"));
             else
-                Console.WriteLine("Back");
+                Console.WriteLine(GetMsg("Back"));
             if (totalPages > 1)
-                Console.WriteLine($"\nPage {pageIndex + 1} of {totalPages}");
+                Console.WriteLine($"\n{GetMsg("Page")} {pageIndex + 1} {GetMsg("of")} {totalPages}");
 
             var key = Console.ReadKey(true);
             if (key.Key == ConsoleKey.Escape)
             {
                 if (main)
-                    Environment.Exit(0);
+                    return;
                 else
                 {
                     menuItem = null;
@@ -163,5 +167,15 @@ public class MenuPaginator
             Console.Write(new string(' ', Console.WindowWidth - left));
             currentLineCursor++;
         }
+    }
+
+    public void SetCulture(CultureInfo culture)
+    {
+        Culture = culture;
+    }
+
+    string GetMsg(string msg)
+    {
+        return _messageTranslate.LookUpCustomText(msg, Culture?.TwoLetterISOLanguageName);
     }
 }
