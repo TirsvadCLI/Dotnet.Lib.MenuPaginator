@@ -8,19 +8,19 @@
 
 <div align="center">
     <a href="https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator">
-        <img src="logo/logo.png" alt="Logo" width="80" height="80">
+        <img src="./logo/logo.png" alt="Logo" width="80" height="80">
     </a>
     <h3 align="center">Menu paginator</h3>
     <p>Menu paginator tool for C# console applications.</p>
     <!-- PROJECT SCREENSHOTS -->
         <a href="https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator/blob/master/images/Screenshot1.png">
-            <img src="images/Screenshot1.png" alt="The game" height="120">
+            <img src="./images/Screenshot1.png" alt="The game" height="120">
         </a>
         <a href="https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator/blob/master/images/Screenshot2.png">
-            <img src="images/Screenshot2.png" alt="The game" height="120">
+            <img src="./images/Screenshot2.png" alt="The game" height="120">
         </a>
         <a href="https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator/blob/master/images/Screenshot3.png">
-            <img src="images/Screenshot3.png" alt="The game" height="120">
+            <img src="./images/Screenshot3.png" alt="The game" height="120">
         </a>    
     <br />
     <p><a href="https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator"><strong>Explore the docs</strong></a></p>
@@ -39,6 +39,7 @@ Pagination tool for menu selection in C# console applications.
   - [Installation](#installation)
 - [Example](#example)
 - [Contributing](#contributing)
+    - [Translation](#translation)
 - [License](#license)
 - [Contact](#contact)
 
@@ -56,7 +57,7 @@ dotnet add package TirsvadCLI.MenuPaginator
 ```
 
 ## Example
-In the [example](https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator/blob/main/src/Example/Example.cs) you can see how to use the AnsiCode class.
+In the [example](https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator/blob/main/src/Example/Example.cs) you can see how to use the Menu Paginator class.
 
 ## Contributing
 
@@ -67,6 +68,23 @@ Contributions are what make the open-source community such an amazing place to l
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+### Translation
+
+We need help for translate to other languages. If you want to help, please create a new issue with the translation. We will add it to the project.
+
+MessageText.json contains the file that can be translated. The key is the English text and the value is the translated text.
+
+```json
+{
+  "Next": "Næste",
+  "Previous": "Forrige",
+  "Select": "Vælg",
+  "Exit": "Afslut"
+}
+```
+
+Save the file with the language code as the name. For example, if you want to translate to Danish, save the file as MessageText.**da**.json.
 
 ## License
 
