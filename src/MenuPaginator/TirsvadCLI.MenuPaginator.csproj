@@ -4,7 +4,7 @@
         <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <VersionPrefix>0.2.0</VersionPrefix>
+        <VersionPrefix>0.2.2.4</VersionPrefix>
         <PackageId>$(AssemblyName)</PackageId>
         <Title>Menu paginator</Title>
         <Authors>Jens Tirsvad Nielsen</Authors>
@@ -16,6 +16,10 @@
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <Description>Menu paginator tool for console</Description>
+    </PropertyGroup>
+    <PropertyGroup>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     </PropertyGroup>
     <ItemGroup>
         <None Include="..\..\logo\logo.png">
@@ -32,11 +36,16 @@
         </None>
     </ItemGroup>
     <ItemGroup>
-      <None Update="MessageText.da.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="MessageText.en.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
+        <None Update="MessageText.da.json" Pack="true" PackagePath="contentFiles\any\any;content">
+            <PackageCopyToOutput>true</PackageCopyToOutput>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="MessageText.en.json" Pack="true" PackagePath="contentFiles\any\any;content">
+            <PackageCopyToOutput>true</PackageCopyToOutput>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="MessageText.my.json">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
 </Project>
