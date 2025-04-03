@@ -1,5 +1,5 @@
 ﻿using System.Globalization;
-using TirsvadCLI.MenuPaginator.Handler;
+using System.Resources;
 
 namespace TirsvadCLI.MenuPaginator;
 
@@ -27,7 +27,7 @@ public class MenuPaginator
 {
     public MenuItem? menuItem = null;
     public CultureInfo? Culture { get; private set; } = null;
-    public Translator _messageTranslate { get; private set; } = new Translator();
+    private readonly ResourceManager _resourceManager = new ResourceManager("TirsvadCLI.MenuPaginator.Properties.Resources", typeof(MenuPaginator).Assembly);
 
     public void ColorizeString(string text, ConsoleColor fg_color, ConsoleColor? bg_color = null)
     {
@@ -46,6 +46,7 @@ public class MenuPaginator
     /// <param name="main">Is this a main menu then esc is equal to exit</param>
     public MenuPaginator(List<MenuItem> menuItems, int pageSize, bool main = false)
     {
+        Culture = CultureInfo.CurrentUICulture;
         string errorMessage = ""; // Error message to be displayed
         int pageIndex = 0; // Index of current page
         int x;
@@ -176,6 +177,6 @@ public class MenuPaginator
 
     string GetMsg(string msg)
     {
-        return _messageTranslate.LookUpCustomText(msg, Culture?.TwoLetterISOLanguageName);
+        return _resourceManager.GetString(msg, Culture) ?? msg;
     }
 }

@@ -73,18 +73,11 @@ Contributions are what make the open-source community such an amazing place to l
 
 We need help for translate to other languages. If you want to help, please create a new issue with the translation. We will add it to the project.
 
-MessageText.json contains the file that can be translated. The key is the English text and the value is the translated text.
+Resources.resx contains the msg that can be translated. The key tex is the English.
 
-```json
-{
-  "Next": "Næste",
-  "Previous": "Forrige",
-  "Select": "Vælg",
-  "Exit": "Afslut"
-}
-```
+If can create a new file called Resources.\<language\>.resx, where \<language\> is the language code. For example, for Danish, the file should be called Resources.da.resx. The file should contain the same keys as the original file, but with the translated text.
 
-Save the file with the language code as the name. For example, if you want to translate to Danish, save the file as MessageText.**da**.json.
+[![New Image](./images/Translation.png)](https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator/blob/main/src/images/Translation.png)
 
 ## License
 
