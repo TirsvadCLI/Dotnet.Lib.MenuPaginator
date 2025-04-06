@@ -78,6 +78,7 @@ public class MenuPaginator
                         newMenuItems.Add(item);
                         validIndex.Add(x++);
                         ColorizeString($"F{1 + indexValidChoice++} ", ConsoleColor.Blue);
+                        Console.CursorLeft = Position.Left + 4;
                         ColorizeString(item.Name, ConsoleColor.Yellow);
                         Console.WriteLine();
                         return item;
@@ -142,7 +143,7 @@ public class MenuPaginator
                     errorMessage += "F12, ";
                 if (pageIndex > 0)
                     errorMessage += "F11, ";
-                errorMessage += "and ESC";
+                errorMessage += GetMsg("and") + " ESC";
             }
         } while (true);
     }
@@ -150,7 +151,7 @@ public class MenuPaginator
     /// <summary>
     /// Colorizes a string with the specified foreground and background colors.
     /// </summary>
-    public void ColorizeString(string text, ConsoleColor fg_color, ConsoleColor? bg_color = null)
+    void ColorizeString(string text, ConsoleColor fg_color, ConsoleColor? bg_color = null)
     {
         Console.ForegroundColor = fg_color;
         Console.BackgroundColor = bg_color ?? ConsoleColor.Black;
@@ -178,7 +179,7 @@ public class MenuPaginator
     /// Sets the culture for the menu paginator.
     /// </summary>
     /// <param name="culture"></param>
-    public void SetCulture(CultureInfo culture)
+    void SetCulture(CultureInfo culture)
     {
         Culture = culture;
     }

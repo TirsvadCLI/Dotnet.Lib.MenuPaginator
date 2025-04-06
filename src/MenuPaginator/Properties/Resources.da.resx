@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name=" Valid keys are" xml:space="preserve">
+  <data name="Valid keys are" xml:space="preserve">
     <value>Gyldige taster er</value>
   </data>
   <data name="Back" xml:space="preserve">
@@ -140,5 +140,8 @@
   </data>
   <data name="Previous page" xml:space="preserve">
     <value>Forrige side</value>
+  </data>
+  <data name="and" xml:space="preserve">
+    <value>og</value>
   </data>
 </root>

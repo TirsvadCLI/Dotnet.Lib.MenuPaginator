@@ -1,4 +1,5 @@
-﻿using TirsvadCLI.MenuPaginator;
+﻿using System.Globalization;
+using TirsvadCLI.MenuPaginator;
 
 namespace Example;
 
@@ -79,9 +80,39 @@ internal class Example
         }
     }
 
+    static void MenuExample3()
+    {
+        CultureInfo.CurrentUICulture = new CultureInfo("da-DK");
+        Console.Clear();
+        Console.WriteLine("Example of a menu with more than one page\n");
+
+        List<MenuItem> menuItems = new()
+        {
+            new MenuItem("Some action to do", (Action)SomeAction),
+            new MenuItem("Some action action to do", (Action)SomeOtherAction),
+            new MenuItem("Some action to do", (Action)SomeAction),
+            new MenuItem("Some action action to do", (Action)SomeOtherAction),
+            new MenuItem("Some action to do", (Action)SomeAction),
+            new MenuItem("A category", null),
+            new MenuItem("Some action to do", (Action)SomeAction),
+            new MenuItem("Some action action to do", (Action)SomeOtherAction),
+            new MenuItem("Some action to do", (Action)SomeAction),
+            new MenuItem("Some action action to do", (Action)SomeOtherAction),
+            new MenuItem("Some action to do", (Action)SomeAction),
+            new MenuItem("Some action action to do", new Action(() => { SomeActionWithParameter("Hello"); })),
+        };
+
+        MenuPaginator menu = new(menuItems, 10);
+        if (menu.menuItem != null && menu.menuItem.Action is Action action)
+        {
+            action();
+        }
+    }
+
     static void Main(string[] args)
     {
         MenuExample1();
         MenuExample2();
+        MenuExample3(); // Forced culture to da-DK
     }
 }

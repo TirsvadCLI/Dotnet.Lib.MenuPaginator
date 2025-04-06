@@ -61,11 +61,11 @@ namespace TirsvadCLI.MenuPaginator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to and.
         /// </summary>
-        internal static string _Valid_keys_are {
+        internal static string and {
             get {
-                return ResourceManager.GetString(" Valid keys are", resourceCulture);
+                return ResourceManager.GetString("and", resourceCulture);
             }
         }
         
@@ -129,6 +129,15 @@ namespace TirsvadCLI.MenuPaginator.Properties {
         internal static string Previous_page {
             get {
                 return ResourceManager.GetString("Previous page", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Valid_keys_are {
+            get {
+                return ResourceManager.GetString("Valid keys are", resourceCulture);
             }
         }
     }
