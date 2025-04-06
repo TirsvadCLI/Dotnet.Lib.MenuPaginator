@@ -79,7 +79,7 @@ namespace TirsvadCLI.MenuPaginator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string Error {
             get {
