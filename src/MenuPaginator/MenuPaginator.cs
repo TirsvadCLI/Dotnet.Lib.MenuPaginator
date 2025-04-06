@@ -29,15 +29,6 @@ public class MenuPaginator
     public CultureInfo? Culture { get; private set; } = null;
     private readonly ResourceManager _resourceManager = new ResourceManager("TirsvadCLI.MenuPaginator.Properties.Resources", typeof(MenuPaginator).Assembly);
 
-    public void ColorizeString(string text, ConsoleColor fg_color, ConsoleColor? bg_color = null)
-    {
-        Console.ForegroundColor = fg_color;
-        Console.BackgroundColor = bg_color ?? ConsoleColor.Black;
-        Console.Write(text);
-        Console.ResetColor();
-    }
-
-
     /// <summary>
     /// Paginates a list of menu items.
     /// </summary>
@@ -68,6 +59,7 @@ public class MenuPaginator
             {
                 ColorizeString(errorMessage, ConsoleColor.Red);
                 errorMessage = "";
+                Console.WriteLine("\n");
             }
 
             var pagedMenuItems = menuItems
@@ -86,6 +78,7 @@ public class MenuPaginator
                         newMenuItems.Add(item);
                         validIndex.Add(x++);
                         ColorizeString($"F{1 + indexValidChoice++} ", ConsoleColor.Blue);
+                        Console.CursorLeft = Position.Left + 4;
                         ColorizeString(item.Name, ConsoleColor.Yellow);
                         Console.WriteLine();
                         return item;
@@ -144,14 +137,26 @@ public class MenuPaginator
             }
             else
             {
-                errorMessage = $"Error: Valid keys are F1-F{pagedMenuItems.Count}, ";
+                errorMessage += GetMsg("Error");
+                errorMessage += $": {GetMsg("Valid keys are")} F1-F{pagedMenuItems.Count}, ";
                 if (pageIndex < totalPages - 1)
                     errorMessage += "F12, ";
                 if (pageIndex > 0)
                     errorMessage += "F11, ";
-                errorMessage += "and ESC";
+                errorMessage += GetMsg("and") + " ESC";
             }
         } while (true);
+    }
+
+    /// <summary>
+    /// Colorizes a string with the specified foreground and background colors.
+    /// </summary>
+    void ColorizeString(string text, ConsoleColor fg_color, ConsoleColor? bg_color = null)
+    {
+        Console.ForegroundColor = fg_color;
+        Console.BackgroundColor = bg_color ?? ConsoleColor.Black;
+        Console.Write(text);
+        Console.ResetColor();
     }
 
     /// <summary>
@@ -170,11 +175,20 @@ public class MenuPaginator
         }
     }
 
-    public void SetCulture(CultureInfo culture)
+    /// <summary>
+    /// Sets the culture for the menu paginator.
+    /// </summary>
+    /// <param name="culture"></param>
+    void SetCulture(CultureInfo culture)
     {
         Culture = culture;
     }
 
+    /// <summary>
+    /// Get a string from the resource file.
+    /// </summary>
+    /// <param name="msg">Msg to be translated</param>
+    /// <returns>Translated msg</returns>
     string GetMsg(string msg)
     {
         return _resourceManager.GetString(msg, Culture) ?? msg;

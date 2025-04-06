@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Valid keys are" xml:space="preserve">
+    <value>Kunci yang sah ialah</value>
+  </data>
   <data name="Back" xml:space="preserve">
     <value>Kembali</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Ralat</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Keluar</value>
@@ -134,5 +140,8 @@
   </data>
   <data name="Previous page" xml:space="preserve">
     <value>Halaman sebelumnya</value>
+  </data>
+  <data name="and" xml:space="preserve">
+    <value />
   </data>
 </root>
