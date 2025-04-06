@@ -144,7 +144,7 @@ public class MenuPaginator
             }
             else
             {
-                errorMessage = $"Error: Valid keys are F1-F{pagedMenuItems.Count}, ";
+                errorMessage = $"{GetMsg("Error")}: {GetMsg("Valid keys are")} F1-F{pagedMenuItems.Count}, ";
                 if (pageIndex < totalPages - 1)
                     errorMessage += "F12, ";
                 if (pageIndex > 0)

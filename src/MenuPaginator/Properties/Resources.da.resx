@@ -117,14 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name=" Valid keys are" xml:space="preserve">
+    <value>Gyldige taster er</value>
+  </data>
   <data name="Back" xml:space="preserve">
     <value>Tilbage</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Fejl</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Afslut</value>
   </data>
   <data name="Next page" xml:space="preserve">
-    <value>Næstet side</value>
+    <value>Næste side</value>
   </data>
   <data name="of" xml:space="preserve">
     <value>af</value>
