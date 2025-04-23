@@ -61,7 +61,7 @@ namespace TirsvadCLI.MenuPaginator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to and.
+        ///   Looks up a localized string similar to .
         /// </summary>
         internal static string and {
             get {
@@ -70,7 +70,7 @@ namespace TirsvadCLI.MenuPaginator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Back.
+        ///   Looks up a localized string similar to .
         /// </summary>
         internal static string Back {
             get {
@@ -79,7 +79,7 @@ namespace TirsvadCLI.MenuPaginator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error.
+        ///   Looks up a localized string similar to .
         /// </summary>
         internal static string Error {
             get {
@@ -88,7 +88,7 @@ namespace TirsvadCLI.MenuPaginator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Exit.
+        ///   Looks up a localized string similar to .
         /// </summary>
         internal static string Exit {
             get {
@@ -97,7 +97,7 @@ namespace TirsvadCLI.MenuPaginator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Next page.
+        ///   Looks up a localized string similar to .
         /// </summary>
         internal static string Next_page {
             get {
@@ -106,7 +106,7 @@ namespace TirsvadCLI.MenuPaginator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to of.
+        ///   Looks up a localized string similar to .
         /// </summary>
         internal static string of {
             get {
@@ -115,16 +115,7 @@ namespace TirsvadCLI.MenuPaginator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Page.
-        /// </summary>
-        internal static string Page {
-            get {
-                return ResourceManager.GetString("Page", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Previous page.
+        ///   Looks up a localized string similar to .
         /// </summary>
         internal static string Previous_page {
             get {
