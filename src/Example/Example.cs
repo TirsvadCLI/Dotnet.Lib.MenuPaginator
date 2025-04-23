@@ -1,4 +1,4 @@
-﻿using System.Globalization;
+using System.Globalization;
 using TirsvadCLI.MenuPaginator;
 
 namespace Example;
@@ -84,7 +84,7 @@ internal class Example
     {
         CultureInfo.CurrentUICulture = new CultureInfo("da-DK");
         Console.Clear();
-        Console.WriteLine("Example of a menu with more than one page\n");
+        Console.WriteLine("Example of a menu with more than one page and languages set to Danish\n");
 
         List<MenuItem> menuItems = new()
         {
