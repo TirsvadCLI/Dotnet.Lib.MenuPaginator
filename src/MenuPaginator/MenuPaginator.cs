@@ -191,6 +191,11 @@ public class MenuPaginator
     /// <returns>Translated msg</returns>
     string GetMsg(string msg)
     {
-        return _resourceManager.GetString(msg, Culture) ?? msg;
+        string? msgText = _resourceManager?.GetString(msg);
+        if (string.IsNullOrEmpty(msgText))
+        {
+            return msg;
+        }
+        return msgText;
     }
 }
