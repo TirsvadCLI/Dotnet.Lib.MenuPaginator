@@ -1,4 +1,4 @@
-﻿[![NuGet Downloads][nuget-shield]][nuget-url]
+[![NuGet Downloads][nuget-shield]][nuget-url]
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -8,7 +8,7 @@
 
 <div align="center">
     <a href="https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator">
-        <img src="./logo/logo.png" alt="Logo" width="80" height="80">
+        <img src="./image/logo/logo.png" alt="Logo" width="80" height="80">
     </a>
     <h3 align="center">Menu paginator</h3>
     <p>Menu paginator tool for C# console applications.</p>

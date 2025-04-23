@@ -1,4 +1,4 @@
-﻿using System.Globalization;
+using System.Globalization;
 using System.Resources;
 
 namespace TirsvadCLI.MenuPaginator;
@@ -27,7 +27,7 @@ public class MenuPaginator
 {
     public MenuItem? menuItem = null;
     public CultureInfo? Culture { get; private set; } = null;
-    private readonly ResourceManager _resourceManager = new ResourceManager("TirsvadCLI.MenuPaginator.Properties.Resources", typeof(MenuPaginator).Assembly);
+    private readonly ResourceManager _resourceManager = new ResourceManager("TirsvadCLI.MenuPaginator.Properties.Resource", typeof(MenuPaginator).Assembly);
 
     /// <summary>
     /// Paginates a list of menu items.
