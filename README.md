@@ -112,7 +112,7 @@ For now we have the following languages:
 
 If can create a new file called Resources.\<language\>.resx, where \<language\> is the language code. For example, for Danish, the file should be called Resources.da.resx. The file should contain the same keys as the original file, but with the translated text.
 
-[![Translation][translation]]
+![Translation][translation]
 
 ## License
 
@@ -149,9 +149,10 @@ Jens Tirsvad Nielsen - [LinkedIn][linkedin-url]
 [screenshot1-url]: https://github.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/blob/main/image/Screenshot1.png
 [screenshot2]: https://raw.githubusercontent.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/master/image/small/Screenshot2.png
 [screenshot2-url]: https://github.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/blob/main/image/Screenshot2.png
-[screenshot3]: https://raw.githubusercontent.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/master/image/smallScreenshot3.png
+[screenshot3]: https://raw.githubusercontent.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/master/image/small/Screenshot3.png
 [screenshot3-url]: https://github.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/blob/main/image/Screenshot3.png
-[translation]: https://raw.githubusercontent.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/master/src/image/Translation.png]
+
+[translation]: https://raw.githubusercontent.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/master/image/Translation.png
 
 [example]: https://raw.githubusercontent.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/master/src/Example/Example.cs
 [example-screenshot]: https://raw.githubusercontent.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/master/src/image/Example.png
