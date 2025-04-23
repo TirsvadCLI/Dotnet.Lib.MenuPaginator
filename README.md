@@ -4,9 +4,7 @@
 
 Pagination Lib for menu selection in C# console applications.
 
-[![screenshot 1][screenshot1]][screenshot1-url]
-[![screenshot 2][screenshot2]][screenshot2-url]
-[![screenshot 3][screenshot3]][screenshot3-url]
+[![screenshot 1][screenshot1]][screenshot1-url][![screenshot 2][screenshot2]][screenshot2-url][![screenshot 3][screenshot3]][screenshot3-url]
 
 ## Table of Contents
 
