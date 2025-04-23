@@ -1,63 +1,93 @@
-[![NuGet Downloads][nuget-shield]][nuget-url]
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![NuGet Downloads][nuget-shield]][nuget-url][![Contributors][contributors-shield]][contributors-url][![Forks][forks-shield]][forks-url][![Stargazers][stars-shield]][stars-url][![Issues][issues-shield]][issues-url][![License][license-shield]][license-url][![LinkedIn][linkedin-shield]][linkedin-url]
 
-<div align="center">
-    <a href="https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator">
-        <img src="./image/logo/logo.png" alt="Logo" width="80" height="80">
-    </a>
-    <h3 align="center">Menu paginator</h3>
-    <p>Menu paginator tool for C# console applications.</p>
-    <!-- PROJECT SCREENSHOTS -->
-        <a href="https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator/blob/master/images/Screenshot1.png">
-            <img src="./images/Screenshot1.png" alt="The game" height="120">
-        </a>
-        <a href="https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator/blob/master/images/Screenshot2.png">
-            <img src="./images/Screenshot2.png" alt="The game" height="120">
-        </a>
-        <a href="https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator/blob/master/images/Screenshot3.png">
-            <img src="./images/Screenshot3.png" alt="The game" height="120">
-        </a>    
-    <br />
-    <p><a href="https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator"><strong>Explore the docs</strong></a></p>
-    <a href="https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
-    ·
-    <a href="https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
-</div>
+# ![Logo][logo] Menu paginator
 
-# Menu paginator
-Pagination tool for menu selection in C# console applications.
+Pagination Lib for menu selection in C# console applications.
+
+[![screenshot 1][screenshot1]][screenshot1-url]
+[![screenshot 2][screenshot2]][screenshot2-url]
+[![screenshot 3][screenshot3]][screenshot3-url]
 
 ## Table of Contents
 
-- [About The Project](#about-the-project)
+- [Overview](#overview)
+- [Features](#features)
 - [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+    - [Install via NuGet Package Manager Console](#install-via-nuget-package-manager-console)
+    - [Install via Visual Studio NuGet Package Manager](#install-via-visual-studio-nuget-package-manager)
+    - [Install via .NET CLI](#install-via-dotnet-cli)
+    - [Clone the repo](#clone-the-repo)
+  - [Example Usage](#example-usage)
 - [Example](#example)
 - [Contributing](#contributing)
     - [Translation](#translation)
 - [License](#license)
 - [Contact](#contact)
+- [Acknowledgments](#acknowledgments)
 
-## About The Project
-This tool is designed to help with creating a menu selection in a console application. The tool will take a list of items and display them in a paginated format. The user can then navigate through the pages and select an item.
+## Overview
+
+The Menu Paginator library is a C# library that provides a simple and efficient way to create paginated menus in console applications. It allows you to display a list of menu items in a paginated format, making it easy for users to navigate through lists of menu choice.
+ 
+## Features
+- [x] Pagination: The library allows you to paginate a list of menu items, making it easy to navigate through large lists.
+- [x] Customizable: You can customize the appearance of the menu, including colors, styles, and more.
+- [x] Keyboard Navigation: The library supports F1-F10 for select menu.
+- [x] Easy to Use: The library is easy to use and integrate into your existing console applications.
+- [x] Multi-language support: The library can support multiple languages, making it easy to use in different regions.
+- [x] Example: The library comes with an example project that demonstrates how to use the library.
+- [x] Open Source: The library is open source and available on GitHub, allowing you to contribute and improve the library.
 
 ## Getting Started
 
-Nuget package: https://www.nuget.org/packages/TirsvadCLI.MenuPaginator/
+This section will guide you through the installation and setup of the Menu Paginator library in your C# console application.
+
+### Prerequisites
+
+- .NET 9.0 or later
 
 ### Installation
 
-```sh
+You can install this library using NuGet Package Manager or by adding the package reference directly to your project file. The library is available on NuGet, so you can easily install it using the NuGet Package Manager Console or the Visual Studio NuGet Package Manager.
+
+#### Install via NuGet Package Manager Console
+
+You can install this library using the NuGet Package Manager Console. Open the console and run the following command:
+```bash
+Install-Package TirsvadCLI.MenuPaginator
+```
+
+#### Install via Visual Studio NuGet Package Manager
+
+You can also install this library using the Visual Studio NuGet Package Manager. Follow these steps:
+
+1. Open your project in Visual Studio.
+2. Right-click on your project in the Solution Explorer and select "Manage NuGet Packages".
+3. Search for "TirsvadCLI.MenuPaginator" in the NuGet Package Manager.
+4. Click "Install" to add the library to your project. 
+
+#### Install via .NET CLI
+
+You can also install this library using the .NET CLI. Open a terminal and run the following command:
+```bash
 dotnet add package TirsvadCLI.MenuPaginator
 ```
 
+#### Clone the repo
+
+![Repo size][repos-size-shield]
+
+If you want to clone the repository and build the library from source, you can do so using Git. Make sure you have Git installed on your machine. Then, run the following command in your terminal:
+
+```bash
+git clone git@github.com:TirsvadCLI/Dotnet.Lib.MenuPaginator.git
+```
+
 ## Example
-In the [example](https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator/blob/main/src/Example/Example.cs) you can see how to use the Menu Paginator class.
+
+In the [example][example] you can see how to use the Menu Paginator class.
 
 ## Contributing
 
@@ -73,11 +103,16 @@ Contributions are what make the open-source community such an amazing place to l
 
 We need help for translate to other languages. If you want to help, please create a new issue with the translation. We will add it to the project.
 
-Resources.resx contains the msg that can be translated. The key tex is the English.
+Resources.resx contains the msg that can be translated. The key text is English.
+
+For now we have the following languages:
+- da (Danish)
+- en (English)
+- my (Myanmar)
 
 If can create a new file called Resources.\<language\>.resx, where \<language\> is the language code. For example, for Danish, the file should be called Resources.da.resx. The file should contain the same keys as the original file, but with the translated text.
 
-[![New Image](./images/Translation.png)](https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator/blob/main/src/images/Translation.png)
+[![Translation][translation]]
 
 ## License
 
@@ -87,18 +122,36 @@ Distributed under the GPL-3.0 [License][license-url].
 
 Jens Tirsvad Nielsen - [LinkedIn][linkedin-url]
 
+## Acknowledgments
+
 <!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/TirsvadCLI/Dotnet.Tool.MenuPaginator?style=for-the-badge
-[contributors-url]: https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/TirsvadCLI/Dotnet.Tool.MenuPaginator?style=for-the-badge
-[forks-url]: https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator/network/members
-[stars-shield]: https://img.shields.io/github/stars/TirsvadCLI/Dotnet.Tool.MenuPaginator?style=for-the-badge
-[stars-url]: https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator/stargazers
-[issues-shield]: https://img.shields.io/github/issues/TirsvadCLI/Dotnet.Tool.MenuPaginator?style=for-the-badge
-[issues-url]: https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator/issues
-[license-shield]: https://img.shields.io/github/license/TirsvadCLI/Dotnet.Tool.MenuPaginator?style=for-the-badge
-[license-url]: https://github.com/TirsvadCLI/Dotnet.Tool.MenuPaginator/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/TirsvadCLI/Dotnet.Lib.MenuPaginator?style=for-the-badge
+[contributors-url]: https://github.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/TirsvadCLI/Dotnet.Lib.MenuPaginator?style=for-the-badge
+[forks-url]: https://github.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/network/members
+[stars-shield]: https://img.shields.io/github/stars/TirsvadCLI/Dotnet.Lib.MenuPaginator?style=for-the-badge
+[stars-url]: https://github.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/stargazers
+[issues-shield]: https://img.shields.io/github/issues/TirsvadCLI/Dotnet.Lib.MenuPaginator?style=for-the-badge
+[issues-url]: https://github.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/issues
+[license-shield]: https://img.shields.io/github/license/TirsvadCLI/Dotnet.Lib.MenuPaginator?style=for-the-badge
+[license-url]: https://github.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/jens-tirsvad-nielsen-13b795b9/
+[githubIssue-url]: https://github.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/issues/
+[repos-size-shield]: https://img.shields.io/github/repo-size/TirsvadCLI/Dotnet.Lib.MenuPaginator?style=for-the-badg
+
 [nuget-shield]: https://img.shields.io/nuget/dt/TirsvadCLI.MenuPaginator?style=for-the-badge
 [nuget-url]: https://www.nuget.org/packages/TirsvadCLI.MenuPaginator/
+
+[logo]: https://raw.githubusercontent.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/master/image/logo/32x32/logo.png
+
+[screenshot1]: https://raw.githubusercontent.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/master/image/small/Screenshot1.png
+[screenshot1-url]: https://github.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/blob/main/image/Screenshot1.png
+[screenshot2]: https://raw.githubusercontent.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/master/image/small/Screenshot2.png
+[screenshot2-url]: https://github.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/blob/main/image/Screenshot2.png
+[screenshot3]: https://raw.githubusercontent.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/master/image/smallScreenshot3.png
+[screenshot3-url]: https://github.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/blob/main/image/Screenshot3.png
+[translation]: https://raw.githubusercontent.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/master/src/image/Translation.png]
+
+[example]: https://raw.githubusercontent.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/master/src/Example/Example.cs
+[example-screenshot]: https://raw.githubusercontent.com/TirsvadCLI/Dotnet.Lib.MenuPaginator/master/src/image/Example.png
