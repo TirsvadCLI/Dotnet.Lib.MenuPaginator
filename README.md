@@ -106,7 +106,7 @@ Resources.resx contains the msg that can be translated. The key text is English.
 For now we have the following languages:
 - da (Danish)
 - en (English)
-- my (Myanmar)
+- ms (Malay)
 
 If can create a new file called Resources.\<language\>.resx, where \<language\> is the language code. For example, for Danish, the file should be called Resources.da.resx. The file should contain the same keys as the original file, but with the translated text.
 
